@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 for(int j=k-2;j>=1;j-=2){
                     six = runs1 / i;
                     runsleftaftersix = runs1 % i;
-                    four = runsleftaftersix / j;
+                    four =(int) Math.ceil((double)runsleftaftersix / j);
                     String result="";
                     if ((four * j + six * i) >= runs1 && (four + six) <= balls1) {
                         result = "Target Achievable\n"+j+"'s(req) : " + four + "  "+i+"'s(req) : " + six;

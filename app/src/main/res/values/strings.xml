@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">CricketScorer</string>
-    <string name="runs">Enter runs left to score</string>
-    <string name="balls">Enter balls left</string>
+    <string name="runs">Runs Left</string>
+    <string name="balls">Balls Left</string>
     <string name="CAL">CALCULATE</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

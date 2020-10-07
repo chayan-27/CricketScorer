@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:innerRadius="@android:dimen/notification_large_icon_height"
+    android:shape="rectangle"
+    android:thickness="30dp"
+    android:useLevel="true">
+
+    <corners android:radius="10dp"
+        />
+    <size android:height="@android:dimen/notification_large_icon_height"
+        android:width="@android:dimen/notification_large_icon_width"/>
+    <solid android:color="#5EFF5722"/>
+
+
+</shape>
