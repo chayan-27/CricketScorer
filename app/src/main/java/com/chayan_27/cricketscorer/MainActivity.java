@@ -44,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
                     four =(int) Math.ceil((double)runsleftaftersix / j);
                     String result="";
                     if ((four * j + six * i) >= runs1 && (four + six) <= balls1) {
-                        result = "Target Achievable\n"+j+"'s(req) : " + four + "  "+i+"'s(req) : " + six;
+                        result = "Target Achievable in "+(four + six)+" balls\n"+j+"'s(req) : " + four + "\n"+i+"'s(req) : " + six;
 
                     } else {
-                        result = "Target not Achievable\n"+j+"'s(req) : " + four + "  "+i+"'s(req) : " + six+" in "+(four+six)
+                        result = "Target not Achievable\n"+j+"'s(req) : " + four + " \n"+i+"'s(req) : " + six+"\nin "+(four+six)
                                 +" balls but given balls are only "+balls1+" fell short of "+((four+six)-balls1)+" balls";
 
                     }
@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.homepage,new ScoreVisibility(list)).addToBackStack(null).commit();
 
             String res="";
             for(String string:list){
