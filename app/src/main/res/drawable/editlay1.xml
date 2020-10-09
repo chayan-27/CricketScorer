@@ -4,7 +4,8 @@
     android:shape="rectangle"
     android:thickness="30dp"
     android:useLevel="true">
-
+<stroke android:width="3dp"
+    android:color="#EE0000"/>
     <corners android:radius="10dp"
         />
     <size android:height="@android:dimen/notification_large_icon_height"

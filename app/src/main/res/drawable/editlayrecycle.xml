@@ -10,6 +10,9 @@
     <size android:height="@android:dimen/notification_large_icon_height"
         android:width="@android:dimen/notification_large_icon_width"/>
     <solid android:color="#A44CAF50"/>
+    <stroke
+        android:width="6dp"
+        android:color="#064309"/>
 
 
 </shape>
