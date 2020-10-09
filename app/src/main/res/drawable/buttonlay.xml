@@ -4,13 +4,13 @@
     android:shape="rectangle"
     android:thickness="30dp"
     android:useLevel="true">
-<stroke android:width="7dp"
-    android:color="#EE0000"/>
+    <stroke android:width="7dp"
+        android:color="#83FFEB3B"/>
     <corners android:radius="10dp"
         />
     <size android:height="@android:dimen/notification_large_icon_height"
         android:width="@android:dimen/notification_large_icon_width"/>
-    <solid android:color="#B0F4F4F4"/>
+    <solid android:color="#5E0AF8"/>
 
 
 </shape>
