@@ -31,16 +31,30 @@ public class MainActivity extends AppCompatActivity {
         runs = (EditText) findViewById(R.id.runs);
         balls = (EditText) findViewById(R.id.balls);
         cal = (Button) findViewById(R.id.cal);
-        final ImageView imageView = (ImageView) findViewById(R.id.image1);
+        ImageView imageView = (ImageView) findViewById(R.id.image1);
         ImageView imageView1=(ImageView) findViewById(R.id.image2);
+        ImageView imageView2 = (ImageView) findViewById(R.id.image3);
+        ImageView imageView3=(ImageView) findViewById(R.id.image4);
+        ImageView imageView4 = (ImageView) findViewById(R.id.image5);
+        ImageView imageView5=(ImageView) findViewById(R.id.image6);
 
         final float bottomOfScreen = getResources().getDisplayMetrics()
                 .heightPixels - (imageView.getHeight() * 4);
         //bottomOfScreen is where you want to animate to
-        animator(imageView,"translationX",-1000f,1000f,5000);
-        animator(imageView,"translationY",bottomOfScreen,0f,5000);
-        animator(imageView1,"translationX",1000f,-1000f,5000);
-        animator(imageView,"translationY",1000f,-1000f,5000);
+        /*animator(imageView,"translationX",-1000f,1000f,5000);
+        animator(imageView,"translationY",-1000f,1000f,5000);*/
+        animator(imageView1,"translationY",-1000f,bottomOfScreen,2000);
+        animator(imageView1,"rotation",1000f,-1000f,5000);
+        animator(imageView2,"translationY",-1000f,bottomOfScreen,3000);
+        animator(imageView2,"rotation",1000f,-1000f,5000);
+
+        animator(imageView3,"translationY",-1000f,bottomOfScreen,4000);
+        animator(imageView3,"rotation",1000f,-1000f,5000);
+        /*animator(imageView4,"translationY",-1000f,3000f,5000);
+        animator(imageView4,"translationX",-300f,800f,5000);
+        animator(imageView4,"rotation",-300f,800f,5000);*/
+
+
         /*ObjectAnimator animY = ObjectAnimator.ofFloat(imageView, "rotation", -1000f,1000f);
         animY.setDuration(5000);
         animY.setInterpolator(new AccelerateInterpolator());
@@ -200,6 +214,7 @@ public class MainActivity extends AppCompatActivity {
         ObjectAnimator animY = ObjectAnimator.ofFloat(imageView, propertyname,left,right);
         animY.setDuration(duration);
         animY.setInterpolator(new AccelerateInterpolator());
+        animY.setInterpolator(new BounceInterpolator());
         animY.setRepeatCount(200);
         animY.start();
     }
