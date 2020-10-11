@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         int balls1 = Integer.parseInt(balls.getText().toString());
         int six, four = 0, two, one, runsleftaftersix, ballsleftaftersix;
         List<String> list = new ArrayList<>();
-        if (runs1 >= balls1) {
+
 
             for(int i=6;i>=2;i-=2){
                 int k=i;
@@ -207,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
                 result = "Target not Achievable\n1's(req) : " + one + "  6's(req) : " + six;
                 list.add(result);
             }*/
-        }
+
     }
 
     public void animator(ImageView imageView,String propertyname,float left,float right,long duration){
