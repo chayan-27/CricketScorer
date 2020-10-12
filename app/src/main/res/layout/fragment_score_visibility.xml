@@ -12,7 +12,7 @@
         android:padding="8dp"
         android:id="@+id/recycle"
         android:layout_margin="2dp"
-        android:background="@drawable/editlayrecycle"
+
         android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:layoutAnimation="@anim/layout_animation_up_to_down"
