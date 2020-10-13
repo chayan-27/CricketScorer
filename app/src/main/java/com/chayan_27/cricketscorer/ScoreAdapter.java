@@ -1,6 +1,7 @@
 package com.chayan_27.cricketscorer;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,11 @@ public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ScoreModel> 
     @Override
     public void onBindViewHolder(@NonNull ScoreModel holder, int position) {
           holder.textView.setText(list.get(position));
+          if(list.get(position).contains("not")){
+              holder.textView.setTextColor(Color.RED);
+          }else{
+              holder.textView.setTextColor(Color.parseColor("#EFC484"));
+          }
     }
 
 

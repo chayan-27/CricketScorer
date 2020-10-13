@@ -139,10 +139,16 @@ public class MainActivity extends AppCompatActivity {
                     k=k+1;
                 }
                 for(int j=k-2;j>=1;j-=2){
+                    String result="";
                     six = runs1 / i;
                     runsleftaftersix = runs1 % i;
+                    if(runsleftaftersix!=0){
+                        result=   "Target Achievable in "+(1 + six)+" balls\n"+j+"'s(req) : " + 0 + "\n"+i+"'s(req) : " + (six+1);
+                        list.add(result);
+
+                    }
                     four =(int) Math.ceil((double)runsleftaftersix / j);
-                    String result="";
+
                     if ((four * j + six * i) >= runs1 && (four + six) <= balls1) {
                         result = "Target Achievable in "+(four + six)+" balls\n"+j+"'s(req) : " + four + "\n"+i+"'s(req) : " + six;
 
