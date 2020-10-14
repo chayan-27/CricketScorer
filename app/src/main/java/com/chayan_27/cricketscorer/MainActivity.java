@@ -140,21 +140,28 @@ public class MainActivity extends AppCompatActivity {
                 }
                 for(int j=k-2;j>=1;j-=2){
                     String result="";
-                    six = runs1 / i;
+                    six = (int)Math.ceil((double)runs1 / i);
                     runsleftaftersix = runs1 % i;
-                    if(runsleftaftersix!=0){
-                        result=   "Target Achievable in "+(1 + six)+" balls\n"+j+"'s(req) : " + 0 + "\n"+i+"'s(req) : " + (six+1);
+                    /*if( (six)*i>=runs1 && (six)<=balls1){
+                        result=   "Target Achievable in "+( six)+" balls\n"+j+"'s(req) : " + 0 + "\n"+i+"'s(req) : " + (six);
                         list.add(result);
 
-                    }
-                    four =(int) Math.ceil((double)runsleftaftersix / j);
+                    }else{
+                       // result=   "Target not Achievable in "+(1 + six)+" balls\n"+j+"'s(req) : " + 0 + "\n"+i+"'s(req) : " + (six+1);
+                        result = "Target not Achievable in "+balls1+" balls\n"+j+"'s(req) : " + 0 + " \n"+i+"'s(req) : " + (six+1)+"\nin "+(six+1)
+                                +" balls but given balls are only "+balls1+"\n,fell short of "+((six+1)-balls1)+" balls";
+
+                        list.add(result);
+
+                    }*/
+                    four =(int) Math.floor((double)runsleftaftersix / j);
 
                     if ((four * j + six * i) >= runs1 && (four + six) <= balls1) {
                         result = "Target Achievable in "+(four + six)+" balls\n"+j+"'s(req) : " + four + "\n"+i+"'s(req) : " + six;
 
                     } else {
                         result = "Target not Achievable\n"+j+"'s(req) : " + four + " \n"+i+"'s(req) : " + six+"\nin "+(four+six)
-                                +" balls but given balls are only "+balls1+" fell short of "+((four+six)-balls1)+" balls";
+                                +" balls but given balls are only "+balls1+",fell short of "+((four+six)-balls1)+" balls";
 
                     }
                     list.add(result);
