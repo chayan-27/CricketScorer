@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import com.plattysoft.leonids.ParticleSystem;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -131,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
         int balls1 = Integer.parseInt(balls.getText().toString());
         int six, four = 0, two, one, runsleftaftersix, ballsleftaftersix;
         List<String> list = new ArrayList<>();
+        List<StringBuilder> list2=new ArrayList<>();
 
 
             for(int i=6;i>=2;i-=2){
@@ -140,8 +142,16 @@ public class MainActivity extends AppCompatActivity {
                 }
                 for(int j=k-2;j>=1;j-=2){
                     String result="";
-                    six = (int)Math.ceil((double)runs1 / i);
+                    six = (int)Math.round((double)runs1 / i);
+
                     runsleftaftersix = runs1 % i;
+                    four =(int) Math.ceil((double)runsleftaftersix / j);
+                    if(runs1/i==0){
+                        four=0;
+                    }
+                    if(six==0 && four==0){
+                       four=four+1;
+                    }
                     /*if( (six)*i>=runs1 && (six)<=balls1){
                         result=   "Target Achievable in "+( six)+" balls\n"+j+"'s(req) : " + 0 + "\n"+i+"'s(req) : " + (six);
                         list.add(result);
@@ -154,10 +164,47 @@ public class MainActivity extends AppCompatActivity {
                         list.add(result);
 
                     }*/
-                    four =(int) Math.floor((double)runsleftaftersix / j);
+                    List<Integer> list1=new ArrayList<>();
+
+                    for(int p=1;p<=four;p++){
+                        list1.add(j);
+                    }
+                    for(int p=1;p<=six;p++){
+                        list1.add(i);
+                    }
+
+
+
+                    Collections.shuffle(list1);
+
+                    StringBuilder s1= new StringBuilder();
+                    for(Integer integer:list1){
+                        s1.append(integer).append(" ");
+                    }
+
+
+                    list2.add(s1);
 
                     if ((four * j + six * i) >= runs1 && (four + six) <= balls1) {
                         result = "Target Achievable in "+(four + six)+" balls\n"+j+"'s(req) : " + four + "\n"+i+"'s(req) : " + six;
+                       //int ar[]=new int[four+six];
+
+
+
+                      /* List<Integer> list2=new ArrayList<>();
+                       int sum=four+six;
+                        int ar1[]=new int[sum];
+                       int count=0;
+                       while (list2.size()<=(four+six)){
+                           int rand= (int) (Math.random()*(sum));
+                           if(!list2.contains(rand)){
+                               ar1[rand]=list1.get(count);
+                               count++;
+                               list2.add(rand);
+                           }
+
+                       }*/
+
 
                     } else {
                         result = "Target not Achievable\n"+j+"'s(req) : " + four + " \n"+i+"'s(req) : " + six+"\nin "+(four+six)
@@ -172,12 +219,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.homepage,new ScoreVisibility(list)).addToBackStack(null).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.homepage,new ScoreVisibility(list,list2)).addToBackStack(null).commit();
 
-            String res="";
+            /*String res="";
             for(String string:list){
                 res=res+string+"\n";
-            }
+            }*/
            /* six = runs1 / 6;
             runsleftaftersix = runs1 % 6;
             ballsleftaftersix = balls1 - six;

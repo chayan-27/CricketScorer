@@ -24,6 +24,7 @@ public class ScoreVisibility extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     List<String> list;
+    List<StringBuilder> list1;
     RecyclerView recyclerView;
 
     // TODO: Rename and change types of parameters
@@ -34,8 +35,9 @@ public class ScoreVisibility extends Fragment {
         // Required empty public constructor
     }
 
-    public ScoreVisibility(List<String> list){
+    public ScoreVisibility(List<String> list,List<StringBuilder> list1){
         this.list=list;
+        this.list1=list1;
     }
 
     /**
@@ -73,7 +75,7 @@ public class ScoreVisibility extends Fragment {
         recyclerView=(RecyclerView)view.findViewById(R.id.recycle);
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(new ScoreAdapter(list,getContext()));
+        recyclerView.setAdapter(new ScoreAdapter(list,getContext(),list1));
         return view;
     }
 }

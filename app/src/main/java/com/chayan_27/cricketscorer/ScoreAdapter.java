@@ -17,9 +17,11 @@ public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ScoreModel> 
 
     List<String> list;
     Context context;
+    List<StringBuilder> list1;
 
-    public ScoreAdapter(List<String> list,Context context) {
+    public ScoreAdapter(List<String> list,Context context,List<StringBuilder> list1) {
         this.list = list;
+        this.list1=list1;
         this.context=context;
     }
 
@@ -36,10 +38,13 @@ public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ScoreModel> 
     @Override
     public void onBindViewHolder(@NonNull ScoreModel holder, int position) {
           holder.textView.setText(list.get(position));
+          holder.runn.setText(list1.get(position).toString());
           if(list.get(position).contains("not")){
               holder.textView.setTextColor(Color.RED);
+              holder.runn.setTextColor(Color.RED);
           }else{
               holder.textView.setTextColor(Color.parseColor("#EFC484"));
+              holder.runn.setTextColor(Color.parseColor("#EFC484"));
           }
     }
 
@@ -51,9 +56,11 @@ public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ScoreModel> 
 
     public class ScoreModel extends RecyclerView.ViewHolder{
         TextView textView;
+        TextView runn;
         public ScoreModel(@NonNull View itemView) {
             super(itemView);
             textView=(TextView)itemView.findViewById(R.id.result);
+            runn=(TextView)itemView.findViewById(R.id.runn);
         }
     }
 }
